@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{% static 'stockapp/display.css' %}">
+
+    <title>Available Data</title>
+</head>
+
+<body>
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+    <div id="div1" align="center"> 
+        <h1 id="heading">Available Data of stock</h1>
+        <table border="3px" id="table">
+            <tr>
+                <th>product_name</th>
+                <th>product_price</th>
+                <th>product_quantity</th>
+                <th>product_period</th>
+                <th style="display:none;" id="product_id">product_id</th>
+                <th>action</th>
+                <th>delete</th>
+            </tr>
+            
+        </table>
+    <br><br>
+    <a href="{% url 'addproduct' %}">
+        <button>AddNewItem</button></a>
+        </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script src="{% static 'js/stockapp/display.js' %}"></script>
+</body>
+
+</html>

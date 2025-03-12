@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'fetch.css' %}">
+    
+    <title>Available Data</title>
+</head>
+<body>
+    {% csrf_token %}
+    <div id="div1">
+        <h1 id="heading">Available Data of stock</h1>
+    <table border="5px" id="table"><tr><th>product_name</th>
+        <th>product_price</th>
+        <th>product_quantity</th>
+        <th>product_period</th>
+    </tr>
+    {% for rec in available_data %}
+    <tr><td>{{rec.product_name}}</td>
+        <td>{{rec.product_price}}</td>
+        <td>{{rec.product_quantity}}</td>
+        <td>{{rec.product_period}}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <a href="{% url 'index' %}" id="div2"><button>Back</button></a>
+</div>
+
+
+
+
+</body>
+</html>

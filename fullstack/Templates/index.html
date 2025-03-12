@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+   <title>Stock Table</title>
+   <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+    <h1>Welcome to the Stock Table</h1>
+    <div class="container">
+        
+        <a href="{% url 'add' %}">Add New Item</a>&nbsp;&nbsp;<a href="{% url 'display' %}">Display</a>
+
+    </div>
+</body>
+</html>

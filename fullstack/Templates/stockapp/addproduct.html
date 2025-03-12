@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="{% static 'stockapp/adddata.css' %}">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="add_data">
+    <h4 id="t1">Add Data</h4>
+       
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="name">Product Name</label>
+        <input id="name" type="text"><br><br>
+
+        <label for="price">Product price</label>
+        <input id="price" type="number" step="0.00"><br><br>
+
+        <label for="quantity">Product quantity</label>
+        <input id="quantity" type="number"><br><br>
+
+        <label for="period">Product Date</label>
+        <input id="period" type="date"><br><br>
+            
+        <input type="submit" name="" id="form1" value="submit">&nbsp;&nbsp;
+    </form>
+    <a href="{% url 'displayhtml' %}"><button id="btn">display</button></a>
+    
+        
+   
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+
+<script src="{% static 'js/stockapp/adddata.js' %}"></script>
+</body>
+</html>

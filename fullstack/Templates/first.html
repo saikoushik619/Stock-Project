@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="{% static 'first.css' %}">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="add_data">
+    <h4 id="t1">Add Data</h4>
+       
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+    
+        <label for="name">Product Name</label>
+        <input id="name" type="text"><br><br>
+
+        <label for="price">Product price</label>
+        <input id="price" type="number"><br><br>
+
+        <label for="quantity">Product quantity</label>
+        <input id="quantity" type="number"><br><br>
+
+        <label for="date">Product Date</label>
+        <input id="date" type="date"><br><br>
+            
+        <button id="form1"> submit </button>&nbsp;&nbsp;
+        <a href="{% url 'index' %}"><button>Back</button></a>
+     
+   
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+
+<script src="{% static 'js/stock.js' %}"></script>
+</body>
+</html>
